@@ -1,7 +1,7 @@
 
 
 resource "aws_instance" "hey" {
-  ami           = "sg-09a3d1d154d7ca8e2"
+  ami           = data.aws_ami.example.id
   instance_type = "t3.micro"
 
   tags = {
@@ -9,8 +9,8 @@ resource "aws_instance" "hey" {
   }
 }
 
-#data "aws_ami" "example" {
-#  owners      = ["973714476881"]
- # most_recent = true
-#  name_regex  = "Centos-8-DevOps-Practice"
-#}
+data "aws_ami" "example" {
+  owners      = ["973714476881"]
+  most_recent = true
+  name_regex  = "Centos-8-DevOps-Practice"
+}
