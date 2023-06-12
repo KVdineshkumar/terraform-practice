@@ -22,6 +22,9 @@ data "aws_ami" "example" {
   most_recent = true
   name_regex = "Centos-8-DevOps_Practice"
 }
+provider "aws" {
+  region = "us-east-1"
+}
 output "ami" {
   value = data.aws_ami.example.id
 }
