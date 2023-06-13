@@ -1,6 +1,6 @@
 
 
-resource "aws_instance" "hey" {
+resource "aws_instance" "web" {
   ami           = data.aws_ami.example.id
   instance_type = "t3.micro"
   vpc_security_group_ids = ["sg-09a3d1d154d7ca8e2"]
@@ -19,7 +19,7 @@ resource "aws_instance" "hey" {
     }
     inline = [
       "sudo labauto ansible",
-      "ansible-pull -i localhost, -U https://github.com/KVdineshkumar/roboshop-ansible/roboshop main.yml -e env=dev -e role_name=frontend"
+      "ansible-pull -i localhost, -U https://github.com/KVdineshkumar/roboshop-ansible.git main.yml -e env=dev -e role_name=frontend"
 
     ]
   }
