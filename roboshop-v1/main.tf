@@ -1,9 +1,47 @@
-module "sample1" {
+#module "sample1" {
+#  source = "./ec2"
+#  name = "sample1"
+#}
+#module "sample2" {
+#  source = "./ec2"
+#  name = "sample2"
+#}
+module "mongodb" {
   source = "./ec2"
-  name = "sample1"
+  name = "mongodb"
 }
-module "sample2" {
+module "catalogue" {
   source = "./ec2"
-  name = "sample2"
+  name = "catalogue"
 }
+module "redis" {
+  source = "./ec2"
+  name = "redis"
+}
+module "user" {
+  source = "./ec2"
+  name = "user"
+}
+module "cart" {
+  source = "./ec2"
+  name = "cart"
+}
+module "mysql" {
+  source = "./ec2"
+  name = "mysql"
+}
+module "shipping" {
+  source = "./ec2"
+  name = "shipping"
+}
+module "rabbitmq" {
+  source = "./ec2"
+  name = "rabbitmq"
+}
+module "payment" {
+  source = "./ec2"
+  name = "payment"
+}
+
+
 
