@@ -22,7 +22,8 @@ variable "instances" {
     cart = {
       name = "cart"
       instance_type = "t3.nano"
-    }   catalogue = {
+    }
+    catalogue = {
       name = "catalogue"
       instance_type = "t3.nano"
     }
