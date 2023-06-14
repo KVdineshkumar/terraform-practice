@@ -1,12 +1,21 @@
 
 
+//resource "aws_instance" "web" {
+  //count = length(var.instances)
+  //ami           = data.aws_ami.example.id
+  //instance_type = "t3.micro"
+
+  //tags = {
+    //Name = "HelloWorld"
+ // }
+//}
 resource "aws_instance" "web" {
   count = length(var.instances)
   ami           = data.aws_ami.example.id
   instance_type = "t3.micro"
 
   tags = {
-    Name = "HelloWorld"
+    Name = element(var.instances, count.index )
   }
 }
 
@@ -16,5 +25,5 @@ data "aws_ami" "example" {
   name_regex  = "Centos-8-DevOps-Practice"
 }
 variable "instances" {
-  default = ["fronted","catalogue","cart"]
+  default = ["fronteded","catalogueded","cartded"]
 }
