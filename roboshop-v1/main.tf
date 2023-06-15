@@ -6,12 +6,14 @@
 #  source = "./ec2"
 #  name = "sample2"
 #}
-module "instance" {
+module "instances" {
   for_each = var.instances
+  source = "./ec2"
   name = each.key
 }
  variable "instances" {
    default = {
+
      frontend = {}
      mongodb = {}
      catalogue = {}
@@ -22,6 +24,6 @@ module "instance" {
      shipping = {}
      rabbitmq = {}
      payment = {}
-     dispatch = {}
+
    }
  }
